@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script>
+        var slideIndex = 0; // slides indexed from 1
+        showSlides(slideIndex);
+
+
+
+        var timeout = null;
+        timeout = setTimeout(automaticChange, 7000); // To avoid automatic change, comment this line
+
+
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+            /* if automaticChange is on, reset the timer */
+            if (timeout !== null) {
+                clearTimeout(timeout);
+                timeout = setTimeout(automaticChange, 7000);
+            }
+        }
+
+
+
+        function currentSlide(n) {
+            slideIndex = n
+            showSlides(slideIndex);
+            /* if automaticChange is on, reset the timer */
+            if (timeout !== null) {
+                clearTimeout(timeout);
+                timeout = setTimeout(automaticChange, 7000);
+            }
+        }
+
+
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 } // if beyond the last one, go to the first one
+            if (n < 1) { slideIndex = slides.length } // if before the first one, go to the last one
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+
+
+        function automaticChange() {
+            slideIndex++;
+            showSlides(slideIndex);
+            timeout = setTimeout(automaticChange, 7000); // call again automaticChange() after 7s
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <nav class="main">
+
+        <ul>
+            <li> <a href="home.html">HOME</a></li>
+            <li> <a href="education.html">EDUCATION</a></li>
+            <li> <a href="hometown.html">HOMETOWN</a></li>
+            <li> <a href="memories.html">MEMORIES</a></li>
+        </ul>
+    </nav>
+    <header>
+    </header>
+    <h1 id="j">MY BEST MOMENTS IN LIFE</h1>
+    <h2 id="p">Love creating memories and capturing them</h2>
+    <br />
+
+   
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 8</div>
+            <img src="images/college.jpg" style="width:100%">
+            <div class="text">Caption One</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 8</div>
+            <img src="images/school.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 8</div>
+            <img src="images/family.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 8</div>
+            <img src="images/parents.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 8</div>
+            <img src="images/port.jpeg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+       
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 8</div>
+            <img src="images/lake.jpeg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">7 / 8</div>
+            <img src="images/college3.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">8 / 8</div>
+            <img src="images/farewell.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        
+    </div>
+
+
+    <footer class="footer">
+        <table style="width:80%" >
+
+            <tr>
+
+                <td align="right">
+                    <a target="_blank" href="https://www.instagram.com/kaur_mehakpreet0910/">
+                        <img class="media" src="images/instagram.png">
+                        <a target="_blank" href="https://www.facebook.com/people/Mehakpreet-Kaur/100074274980550/">
+                            <img class="media" src="images/facebook.jpg">
+
+                </td>
+
+            </tr>
+
+            <tr>
+                <td align="center"></td>
+                <td align="center"></td>
+                <td align="center"></td>
+                <td colspan="4" align="right">All Rights Reserved &copy;2022</td>
+            </tr>
+
+
+        </table>
+
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
